@@ -1,0 +1,27 @@
+package Ejercicios_1_A_Mano;
+
+import java.net.*; import java.io.*;
+
+
+
+public class Servidor {
+
+	public static void main(String[] args) throws IOException {
+		int puerto = 1111;
+		ServerSocket servidorSocket = new ServerSocket(puerto);
+
+		while(true) {
+			
+			try {
+				
+			}catch(Exception e) {
+				System.err.println("Error" + e.getStackTrace()) ;
+			}
+			
+			
+			
+		}
+		
+	}
+
+}

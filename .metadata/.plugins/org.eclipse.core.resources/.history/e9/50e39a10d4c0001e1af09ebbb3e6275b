@@ -1,0 +1,8 @@
+package TCPchat;
+
+public class Cliente {
+	public static void main(String[] args) {
+		Socket clientSocket = new Socket("localhost",1111);
+		
+	}
+}

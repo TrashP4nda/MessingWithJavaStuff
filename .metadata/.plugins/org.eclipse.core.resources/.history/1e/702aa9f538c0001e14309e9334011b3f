@@ -1,0 +1,15 @@
+package Enviar_Objeto_Encolar;
+
+public class Cliente {
+	
+	public static void main(String[] args) {
+		Socket clientSocket = new Socket("localhost",1111);
+		
+		
+		
+		
+		
+		
+		
+	}
+}

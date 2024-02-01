@@ -1,0 +1,18 @@
+package Enviar_Objeto;
+
+import java.io.Serializable;
+
+public class Persona implements Serializable{
+
+		private String nombre;
+		private String apellido;
+		
+		public Persona(String n , String a) {
+			this.nombre = n;
+			this.apellido = a;
+		
+		}
+		
+		
+		
+}

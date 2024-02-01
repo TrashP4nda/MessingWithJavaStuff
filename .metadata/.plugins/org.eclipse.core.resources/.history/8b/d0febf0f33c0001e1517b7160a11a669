@@ -1,0 +1,35 @@
+package Enviar_Objeto;
+
+import java.net.*;
+import java.io.*;
+
+public class Cliente_Objeto {
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket("localhost",1111);
+        
+        
+        try {
+        	ObjectInputStream objectInput = new ObjectInputStream(socket.getInputStream());
+        	ObjectOutputStream objectOutput = new ObjectOutputStream(socket.getOutputStream());
+        	Persona persona2 = new Persona("Juan","Pepez");
+        	objectOutput.writeObject(persona2);
+        	objectOutput.flush();
+        	
+        	
+        	try {
+        		if (objectInput.readObject() != null) {
+					Persona persona3 = (Persona) objectInput.readObject();
+					System.out.println(persona3.getNombre() + " " + persona3.getApellido());
+				}else {
+					System.err.println("Nothing Received");
+				}
+        	}catch(Exception e) {
+        		e.printStackTrace();
+        	}
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }finally {
+        	socket.close();
+        }
+    }
+}

@@ -1,0 +1,9 @@
+package Enviar_Objeto_Encolar;
+
+public class Servidor {
+	
+	public static void main(String[] args) {
+		ServerSocket sockete = new ServerSocket(1111);
+	}
+
+}

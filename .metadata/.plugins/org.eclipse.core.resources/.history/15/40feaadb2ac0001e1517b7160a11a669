@@ -1,0 +1,17 @@
+package Ejercicios_1_A_Mano;
+
+import java.net.*;
+import java.io.*;
+
+public class Cliente {
+	
+	public static void main(String[] args) throws IOException {
+		String host = "localhost";
+		int port = 1111;
+		
+		Socket clientsocket = new Socket(host,port);
+		BufferedReader input = new BufferedReader(new InputStreamReader(clientsocket.getInputStream()));
+		
+	}
+
+}

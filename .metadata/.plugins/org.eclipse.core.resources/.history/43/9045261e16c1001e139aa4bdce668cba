@@ -1,0 +1,98 @@
+package WindowBuilder;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+
+public class RegistrationForm extends JFrame {
+    private JTextField textFieldUsername;
+    private JPasswordField passwordField;
+    // Add more fields if needed
+
+    public RegistrationForm() {
+        setTitle("Registration");
+        setBounds(100, 100, 300, 300); // Adjust size as needed
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        JLabel lblUsername = new JLabel("Username:");
+        lblUsername.setBounds(10, 10, 80, 25);
+        getContentPane().add(lblUsername);
+
+        textFieldUsername = new JTextField();
+        textFieldUsername.setBounds(100, 10, 160, 25);
+        getContentPane().add(textFieldUsername);
+        textFieldUsername.setColumns(10);
+
+        JLabel lblPassword = new JLabel("Password:");
+        lblPassword.setBounds(10, 40, 80, 25);
+        getContentPane().add(lblPassword);
+
+        passwordField = new JPasswordField();
+        passwordField.setBounds(100, 40, 160, 25);
+        getContentPane().add(passwordField);
+
+        // Add more components for other fields if needed
+
+        JButton btnSubmit = new JButton("Submit");
+        btnSubmit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                
+            	private static final String schema = "https://";
+            	private static final String server = "imdb.com";
+            	
+            	public static void main(String[] args) {
+            		String palabra = "Star wars";
+            		
+            		try {
+            			
+            				String resource = URLEncoder.encode(palabra,StandardCharsets.UTF_8.name());
+            				String direccion = schema + server + "/find?q=" + resource;
+            				
+            				
+            				URL url = new URL(direccion);
+            				
+            				HttpClient cliente = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).followRedirects(HttpClient.Redirect.NORMAL).build();
+            				HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(direccion)).headers("Conetent-type","text/plain").setHeader("User-Agent", "Mozilla/5.0").build();
+            				
+            				
+            				HttpResponse<String> respuesta = cliente.send(request, HttpResponse.BodyHandlers.ofString());
+            				
+            				int code = respuesta.statusCode();
+            				
+            				if (code == 200) {
+            					BufferedWriter writer = new BufferedWriter(new FileWriter("index.html"));
+            		            writer.write(respuesta.body());
+            		            writer.close();
+            				}
+            			
+            			
+            			
+            			
+            			
+            		
+            			
+            			
+            			
+            			
+            			
+            			
+            		}catch(Exception e) {
+            			e.printStackTrace();
+            		}
+            	
+            }
+        });
+        btnSubmit.setBounds(100, 80, 89, 23);
+        getContentPane().add(btnSubmit);
+    }
+}

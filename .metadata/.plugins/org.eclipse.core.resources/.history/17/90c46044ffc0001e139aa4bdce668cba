@@ -1,0 +1,16 @@
+package com.demoLogin.demoLogin_java;
+import com.demoLogin.demoLogin_java_controllers.*;
+import com.demoLogin.demoLogin_java_models.*;
+import com.demoLogin.demoLogin_java_services.*;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoLoginJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoLoginJavaApplication.class, args);
+	}
+
+}

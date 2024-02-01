@@ -1,0 +1,31 @@
+package com.demoLogin.demoLogin_java_services;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	private Map<String,String> users = new HashMap<>();
+	
+	public UserService() {
+		
+	}
+	
+	
+	public boolean validateUser(String username , String password) {
+		return users.containsKey(username) && users.get(username).equals(password);	}
+	
+	public boolean changePassword (String username , String oldPassword , String newPassword) {
+		if (validateUser(username,oldPassword)) {
+			users.put(username, newPassword);
+			return true;
+		}
+		return false;
+	}
+	public void registerUser(String username,String password) {
+		users.put(username, password);
+		
+	}
+}

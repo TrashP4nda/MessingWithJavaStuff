@@ -1,0 +1,12 @@
+package Enviar_Objeto;
+
+import java.net.*;
+
+public class Servidor_Objeto {
+	public static void main(String[] args) throws Exception {
+		ServerSocket serverSocket = new ServerSocket(1111);
+		System.out.println("Server Started");
+		
+	}
+	
+}

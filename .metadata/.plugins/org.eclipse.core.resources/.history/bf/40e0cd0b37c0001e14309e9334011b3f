@@ -1,0 +1,11 @@
+package Enviar_Objeto_Encolar;
+
+import java.net.*;
+
+public class Servidor {
+	
+	public static void main(String[] args) throws IOException {
+		ServerSocket sockete = new ServerSocket(1111);
+	}
+
+}

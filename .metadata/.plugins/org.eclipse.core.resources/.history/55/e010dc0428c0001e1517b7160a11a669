@@ -1,0 +1,12 @@
+package Ejercicios_1_A_Mano;
+
+import java.net.*;
+import java.io.*;
+
+main
+
+	
+	int puerto = 1111;
+	ServerSocket servidorSocket = new ServerSocket(puerto);
+
+

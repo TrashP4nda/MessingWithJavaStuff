@@ -1,0 +1,30 @@
+package Ejercicios_1_A_Mano;
+
+import java.net.*; import java.io.*;
+
+
+
+public class Servidor {
+
+	public static void main(String[] args) throws IOException {
+		int puerto = 1111;
+		ServerSocket servidorSocket = new ServerSocket(puerto);
+		try {
+		while(true) {
+			Socket clientSocket = servidorSocket.accept();
+				try {
+					PrintWriter out = new PrintWriter(clientSocket.getOutputStream(),true);
+					out.println("Código 100");
+				}finally {
+					clientSocket.close();
+				}
+			
+			
+		}
+		}catch(Exception e) {
+			
+		}
+		
+	}
+
+}

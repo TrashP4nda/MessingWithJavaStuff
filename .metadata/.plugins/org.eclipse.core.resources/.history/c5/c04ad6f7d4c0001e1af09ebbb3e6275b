@@ -1,0 +1,27 @@
+package TCPchat;
+import java.net.*;
+import java.io.*;
+
+public class Cliente {
+	public static void main(String[] args) throws IOException {
+		Socket clientSocket = new Socket("localhost",1111);
+		
+		
+		try {
+			
+			ObjectOutputStream objectOutput = new ObjectOutputStream(clientSocket.getOutputStream());
+			objectOutput.writeObject("Hola , soy el cliente");
+			
+			
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			clientSocket.close();
+		}
+	}
+}

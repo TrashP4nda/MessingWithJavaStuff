@@ -1,0 +1,9 @@
+package TCPchat;
+import java.net.*;
+
+public class Cliente {
+	public static void main(String[] args) throws IOException {
+		Socket clientSocket = new Socket("localhost",1111);
+		
+	}
+}

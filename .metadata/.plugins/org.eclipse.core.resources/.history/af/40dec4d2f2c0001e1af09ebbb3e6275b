@@ -1,0 +1,30 @@
+package Servicios_HTTP;
+
+import java.net.*;
+import java.io.*;
+import java.nio.*;
+
+public class Pedirpagina {
+	
+	private static final String schema = "https://";
+	private static final String server = "imdb.com";
+	
+	public static void main(String[] args) {
+		String palabra = "Star wars";
+		
+		try {
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

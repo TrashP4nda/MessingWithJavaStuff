@@ -1,0 +1,31 @@
+package TCPchat;
+
+import java.io.IOException;
+import java.net.*;
+
+public class Servidor {
+	public static void main(String[] args) throws IOException {
+		ServerSocket serverSocket = new ServerSocket(1111);
+		System.out.println("Servidor Iniciado , esperando conexión...");
+		
+		try {
+			
+			Socket clientSocket = serverSocket.accept();
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			serverSocket.close();
+		}
+		
+	}
+	
+	private static class clientHandler{
+		
+	}
+}
+
+

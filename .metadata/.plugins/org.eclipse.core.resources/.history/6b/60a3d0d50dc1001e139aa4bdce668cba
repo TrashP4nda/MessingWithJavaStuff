@@ -1,0 +1,5 @@
+package com.demoLogin.demoLogin_java.repositories;
+
+public interface UserRepository {
+
+}

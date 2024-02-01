@@ -1,0 +1,6 @@
+package com.demoLogin.demoLogin_java_models;
+
+public class User {
+	private String user;
+	private String password;
+}

@@ -1,0 +1,37 @@
+package TCPchat;
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+public class Cliente {
+	public static void main(String[] args) throws IOException {
+		Socket clientSocket = new Socket("localhost",1111);
+		Scanner scanner = new Scanner(System.in);
+		
+		try {
+			
+			ObjectOutputStream objectOutput = new ObjectOutputStream(clientSocket.getOutputStream());
+			
+			
+			while(!scanner.nextLine().equals('*')) {
+				
+				String input = scanner.nextLine();
+				objectOutput.writeObject(input);
+				scanner.nextLine();
+			}
+			
+			objectOutput.writeObject("Terminando conexión");
+			
+			
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			clientSocket.close();
+		}
+	}
+}
